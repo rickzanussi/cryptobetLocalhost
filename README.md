@@ -1,5 +1,29 @@
 # Cryptobet is an application to generate, manage and play bets
 
+
+PLEASE when you download the project from github, in your ubuntu change the cryptobet-master directoyr in cryptobet
+(For some reason, truffle dont rebuild files with links to the new directory. sure my few knowledge of github)
+
+## Useful links
+
+### Rubric points and explanation
+https://github.com/rickzanussi/cryptobet/blob/master/explanation_grading_rubric.md
+
+### Pattern descriptions
+https://github.com/rickzanussi/cryptobet/blob/master/design_pattern_decisions.md
+
+### Security decisions
+https://github.com/rickzanussi/cryptobet/blob/master/avoiding_common_attacks.md
+
+### Rinkeby addresses
+https://github.com/rickzanussi/cryptobet/blob/master/deployed_addresses.txt
+
+### URL application (give some seconds to display)
+
+http://18.223.68.224:8080/home
+
+(Metamask is only when the menu Metamask is clicked)
+
 ## There are two contracts: MainBet and GenericBet
 MainBet is deployed with the parameters to generate a sequence of bets. The parameters are given once and all the generated bets implement the same parameters of their MainBet. To have a sequence of bets with different parameter it is sufficient deploy another MainBet contract with different parameters. From a MainBet, a bet can be deployed only when the former bet of the same sequence is finished with a winner, with the function createBet The GenericBet contract store the parameters of the bet, initialize all the variable for bet and manage the bet of the players and the end of the bet. It the basic functions are: buyNumber, combineNumbers and endBet (internal)
 
@@ -39,8 +63,13 @@ There are 5 test The contract MainBet.sol is deployed. The contract contains the
 4. the function combineNumbers is called. (to have two number to combine, a new buyNumber function is called and the number boguht by the former test is reused) the assert check is the computation of the combined number is correct and if the combined number is effectively assigned
 5. the function of buyNumber is called in a loop until the bet is finished (because all the numbers in the winning zone are bought). The contract automatically call the endBet function, choose a random number and assign a winner the assert check if the winning number is in the winning zone
 
-##Web application
+## Web application
 
 There a web application to check some functionalities of the contracts. The web application allow to buy numbers and combine numbers. 
-The web application is made completely in Node (i dont have a deep knowledge of javascript) for this reason I couldn’t use neither metamask neither uport 
-### **The web application rely on contracts deployed in Rinkeby]**
+The web application is made completely in Node (i dont have a deep knowledge of javascript) for this reason I couldn’t use metamask in Node. I made a special page to use metamask with one transaction
+
+### **The web application rely on contracts deployed in Rinkeby**
+
+
+
+

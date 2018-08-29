@@ -1,0 +1,4 @@
+Rinkeby addresses
+
+MainBet contract address     0x2a33ce1f9a3bcbb5d694bc81cd64eb4e7942a3b9
+GeneriBet Contract address   0x8D9Dc9597C46D3C38cc3A84D50E4a3585F5F788C

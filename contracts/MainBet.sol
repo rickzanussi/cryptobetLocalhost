@@ -157,8 +157,7 @@ contract GenericBet {
         
         betNumbers[boughtNumber] = betNumber(msg.sender,999); ///////////////////////////////////////////////// 
         
-        // given back the money if the sender send more money than the cost of a new number 
-        msg.sender.transfer(SafeMath.sub(msg.value, newNumberPrice)); 
+        
         
         // check if the bought number is in the range of winner numbers 
         if(boughtNumber >= prizeNumberLow && boughtNumber <= prizeNumberHigh){ 
@@ -169,7 +168,8 @@ contract GenericBet {
         if(freeNumbersLength == 0 || prizeNumbers ==0) { 
             endBet(); 
         } 
-            
+            // given back the money if the sender send more money than the cost of a new number 
+        msg.sender.transfer(SafeMath.sub(msg.value, newNumberPrice)); 
         return(boughtNumber); 
   
     } 
